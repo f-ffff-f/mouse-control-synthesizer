@@ -1,0 +1,100 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-color: rgba(128, 128, 128, 0.171);
+}
+canvas {
+    perspective: 100px;
+    position: absolute;
+    background: radial-gradient(circle at 100px 100px, #000, #5cabff);
+    opacity: 0;
+}
+
+.animation {
+    animation: intro 3.5s;
+    /* animation-iteration-count: infinite; */
+    animation-fill-mode: forwards;
+}
+
+@keyframes intro {
+    20% {
+        z-index: 0;
+        width: 0;
+        height: 0;
+        opacity: 0.1;
+        top: 50vh;
+        left: 50vw;
+        position: absolute;
+        display: none;
+        transform: scale(10);
+        visibility: hidden;
+        border-radius: 50%;
+        transition: all 2s;
+        filter: blur(6px);
+    }
+    60% {
+        transform: scale(1.5);
+        filter: blur(4px);
+    }
+    90% {
+        opacity: 0.2;
+        filter: blur(2px);
+        border-radius: 0%;
+    }
+    100% {
+        z-index: 1;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        /* visibility: visible; */
+        opacity: 1;
+        transform: scale(1);
+        background: radial-gradient(circle at 100px 100px, #d5d5d53b, #9fceff);
+        filter: blur(0px);
+    }
+}
+.start-btn:hover {
+}
+
+.start-btn {
+    z-index: 1;
+    width: 20vw;
+    height: 20vw;
+    position: absolute;
+    top: calc(100vh / 2 - 20vw / 2);
+    left: calc(100vw / 2 - 20vw / 2);
+    border-radius: 50%;
+    background: radial-gradient(circle at 100px 100px, #b1d2df88, #9fceff);
+    box-shadow: 30px 30px 99px #838383, -30px -30px 188px #ffffff;
+    transform: scale(1);
+    transition: all 2000ms;
+    perspective: 10px;
+}
+
+.start-btn:hover {
+    transform: scale(1.5);
+}
+
+.clicked {
+    z-index: 0;
+    opacity: 0;
+    /* background: linear-gradient(145deg, #f0f0f000, #f0f0f000);
+    box-shadow: 100px 100px 100px #ffffff, -100px -100px 100px #ffffff; */
+    transform: scale(50);
+}
+
+.valign {
+    color: aliceblue;
+    font-size: 3em;
+    position: relative;
+    top: calc(50% - 32px);
+    left: calc(50% - 192px);
+    transition: all 500ms;
+    /* vendor prefixes omitted due to brevity */
+}
+.start-btn:hover .valign {
+    opacity: 0;
+}

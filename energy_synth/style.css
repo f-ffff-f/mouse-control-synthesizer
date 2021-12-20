@@ -1,0 +1,13 @@
+* {
+    cursor: grab;
+}
+html,
+body {
+    margin: 0;
+    padding: 0;
+    /* color: rgba(173, 217, 255, 0.123); */
+}
+
+canvas {
+    display: block;
+}
